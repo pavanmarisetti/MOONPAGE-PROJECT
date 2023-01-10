@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM openjdk11
+FROM openjdk:11
 
 WORKDIR /app
 
