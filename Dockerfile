@@ -1,13 +1,5 @@
-# syntax=docker/dockerfile:1
-
-FROM openjdk:11
-
+FROM openjdk:11 as base 
 WORKDIR /app
-
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:resolve
-
-COPY src ./src
-
-CMD ["./mvnw", "spring-boot:run"]
+COPY . . 
+RUN chmod +x mnvw
+RUN ./mvnw build
